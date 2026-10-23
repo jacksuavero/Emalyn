@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff7f0">
+<meta name="description" content="Ema Photo Bouquet — a collection of your beautiful smiles.">
+<title>Ema Photo Bouquet ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fff7f0;--ink:#4b3933;--muted:#8e7770;--rose:#dc9295;--rose-dark:#a96569;--leaf:#7b8c70;--line:#ecd8cf;--white:#fffdf8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 7% 8%,#f2c9c3a0,transparent 28rem),radial-gradient(ellipse at 92% 26%,#e8e6d3a0,transparent 31rem),radial-gradient(ellipse at 50% 90%,#f7dfd5a0,transparent 34rem)}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,calc(100% - 44px));margin:auto}
+header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:25px 0 17px;border-bottom:1px solid #ead6ceaa}
+.brand{font:600 clamp(32px,4.4vw,59px)/.9 "Caveat",cursive;white-space:nowrap}
+.brand .heart{color:var(--rose);font-family:"DM Sans";font-size:.65em;margin-left:5px}
+.tagline{margin:10px 0 0 10px;font-size:10px;letter-spacing:.28em;color:#7e6860;text-transform:uppercase}
+nav{display:flex;gap:clamp(16px,3vw,38px);align-items:center;font:13px "Playfair Display",serif;letter-spacing:.07em}
+nav a{padding:9px 0;border-bottom:1px solid transparent}nav a:hover,nav a.active{border-color:var(--rose)}
+.hero{text-align:center;padding:38px 0 20px}
+.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.28em;color:var(--rose-dark);font-weight:700}
+h1{font:600 clamp(42px,6vw,73px)/.92 "Caveat",cursive;margin:12px 0 5px}
+h1 em{display:block;font:italic 500 clamp(18px,2vw,25px)/1.4 "Playfair Display",serif;color:#8c7166;letter-spacing:.03em;margin-top:10px}
+.intro{font-size:13px;line-height:1.8;color:var(--muted);max-width:520px;margin:12px auto 0}
+.ornament{font-size:19px;color:var(--rose);letter-spacing:.6em;margin:12px 0 3px}
+main{padding-bottom:10px}
+.gallery-title{display:flex;justify-content:space-between;align-items:end;margin:22px 0 14px;gap:20px}
+.gallery-title h2{font:500 25px "Playfair Display",serif;margin:0}
+.gallery-title span{font-size:10px;letter-spacing:.15em;color:var(--muted)}
+.gallery{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(28px,4vw,49px);gap:clamp(9px,1.6vw,18px);padding:12px 4px 0}
+.photo{position:relative;display:block;min-width:0;min-height:0;border:8px solid #fffdf9;border-bottom-width:26px;background:#f2e3dc;box-shadow:0 7px 18px #684a3c1b,0 1px 4px #684a3c14;cursor:zoom-in;padding:0;transition:transform .28s,box-shadow .28s;isolation:isolate}
+.photo:before{content:"";position:absolute;z-index:3;top:-15px;left:50%;transform:translateX(-50%) rotate(-3deg);width:65px;height:22px;background:#e9a9a0a8;clip-path:polygon(3% 0,100% 4%,96% 100%,0 94%)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo:hover{z-index:5;transform:translateY(-5px) rotate(0deg) scale(1.02)!important;box-shadow:0 16px 32px #684a3c30}
+.photo:nth-child(1){grid-column:1/span 4;grid-row:span 6;transform:rotate(-3.5deg);margin:4px 0 0 7px}
+.photo:nth-child(2){grid-column:5/span 4;grid-row:span 5;transform:rotate(.8deg);margin-top:0}
+.photo:nth-child(3){grid-column:9/span 4;grid-row:span 6;transform:rotate(4deg);margin:10px 8px 0 0}
+.photo:nth-child(4){grid-column:1/span 3;grid-row:span 5;transform:rotate(-3deg);margin:0 0 0 4px}
+.photo:nth-child(5){grid-column:4/span 3;grid-row:span 5;transform:rotate(3deg);margin-top:5px}
+.photo:nth-child(6){grid-column:7/span 3;grid-row:span 5;transform:rotate(-1.3deg);margin-top:9px}
+.photo:nth-child(7){grid-column:10/span 3;grid-row:span 5;transform:rotate(3deg);margin-right:5px}
+.side-note{position:absolute;z-index:4;pointer-events:none;font:600 clamp(18px,2.2vw,29px)/.95 "Caveat",cursive;color:#856c5e}
+.side-note.left{left:0;bottom:3%;transform:rotate(-8deg)}.side-note.right{right:0;top:25%;transform:rotate(7deg)}
+.flower-bouquet{position:relative;z-index:2;width:min(780px,84%);margin:-6px auto 0;pointer-events:none}
+.flower-bouquet svg{width:100%;height:auto;display:block;filter:drop-shadow(0 5px 5px #6b4c3510)}
+.memory-note{max-width:610px;margin:40px auto 58px;text-align:center;padding:0 15px}
+.memory-note .flower{color:var(--rose);font-size:27px}
+blockquote{font:italic 500 clamp(24px,3.6vw,38px)/1.35 "Playfair Display",serif;margin:12px 0}
+.memory-note p{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:23px 0 28px;display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:11px;letter-spacing:.05em}
+.lightbox{position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;padding:24px;background:#2b2020ed}
+.lightbox.open{display:flex}.lightbox img{max-width:min(100%,1000px);max-height:85vh;object-fit:contain;border:9px solid #fffdf8;border-bottom-width:23px;box-shadow:0 18px 70px #0005}
+.lb{position:absolute;width:44px;height:44px;border-radius:50%;border:1px solid #ffffff65;color:white;background:#ffffff12;font-size:25px;display:grid;place-items:center;cursor:pointer}
+.close{top:18px;right:18px}.prev{left:18px}.next{right:18px}.counter{position:absolute;bottom:17px;color:#fff;font-size:11px;letter-spacing:.18em}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 24px)}header{align-items:flex-start;flex-direction:column;gap:13px}.brand{font-size:43px}.tagline{font-size:9px;margin-left:3px}
+ nav{width:100%;justify-content:space-between;font-size:12px}.hero{padding:35px 0 15px}
+ .gallery{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:clamp(30px,9vw,48px);gap:10px}
+ .photo{border-width:6px;border-bottom-width:20px}.photo:before{width:47px;height:18px;top:-12px}
+ .photo:nth-child(1){grid-column:1/span 3;grid-row:span 5;margin-left:4px}
+ .photo:nth-child(2){grid-column:4/span 3;grid-row:span 5}
+ .photo:nth-child(3){grid-column:1/span 3;grid-row:span 5;margin-right:3px}
+ .photo:nth-child(4){grid-column:4/span 3;grid-row:span 5;margin-left:3px}
+ .photo:nth-child(5){grid-column:1/span 3;grid-row:span 5}
+ .photo:nth-child(6){grid-column:4/span 3;grid-row:span 5}
+ .photo:nth-child(7){grid-column:2/span 4;grid-row:span 5}
+ .side-note{display:none}.flower-bouquet{width:100%;margin:0 auto}.gallery-title h2{font-size:23px}.gallery-title span{font-size:9px}
+ .memory-note{margin:35px auto 42px}footer{font-size:9px}.prev{left:7px}.next{right:7px}.lightbox{padding:12px}
+}
+@media(max-width:400px){.brand{font-size:37px}.intro{font-size:12px}.gallery-title{align-items:start;flex-direction:column;gap:5px}.gallery{grid-auto-rows:38px;gap:8px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap" id="home">
+<header>
+ <div><a class="brand" href="#home">Ema Photo Bouquet <span class="heart">♡</span></a><div class="tagline">Little moments <span style="color:#d98283">♥</span> beautiful Smiles</div></div>
+</header>
+<main>
+<section class="hero">
+ <div class="kicker">A collection of my favorite Smile of yours</div>
+ <h1>Little moments,<em>beautiful smiles.</em></h1>
+ <p class="intro">A bouquet of smiles, sunshine. Each picture is a flower in a collection of memories I want to keep close.</p>
+ <div class="ornament" aria-hidden="true">✿ ❀ ♥ ❀ ✿</div>
+</section>
+<section id="gallery" aria-labelledby="gallery-heading">
+ <div class="gallery-title"><h2 id="gallery-heading">Ema memory bouquet</h2><span>7 PHOTOS · ENDLESS MEMORIES</span></div>
+ <div class="gallery">
+  <button class="photo" data-index="0" aria-label="Open photo 1"><img src="img/Emalyn (1).jpg" alt="Smiling close-up portrait" loading="eager"></button>
+  <button class="photo" data-index="1" aria-label="Open photo 2"><img src="img/Emalyn (2).jpg" alt="Outdoor seated portrait among trees" loading="lazy"></button>
+  <button class="photo" data-index="2" aria-label="Open photo 3"><img src="img/Emalyn (3).jpg" alt="Casual outfit on a sunny day" loading="lazy"></button>
+  <button class="photo" data-index="3" aria-label="Open photo 4"><img src="img/Emalyn (4).jpg" alt="Floral dress and garden memory" loading="lazy"></button>
+  <button class="photo" data-index="4" aria-label="Open photo 5"><img src="img/Emalyn (5).jpg" alt="Smiling portrait in a patterned jacket" loading="lazy"></button>
+  <button class="photo" data-index="5" aria-label="Open photo 6"><img src="img/Emalyn (6).jpg" alt="Green dress portrait with a bow" loading="lazy"></button>
+  <button class="photo" data-index="6" aria-label="Open photo 7"><img src="img/Emalyn (7).jpg" alt="Forest trail travel memory" loading="lazy"></button>
+ </div>
+ <div class="flower-bouquet" aria-hidden="true">
+ <svg viewBox="0 0 760 180" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#778567" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M380 168 Q328 92 230 35"/><path d="M380 168 Q410 90 505 30"/><path d="M380 168 Q305 120 165 90"/><path d="M380 168 Q450 111 600 82"/><path d="M380 168 Q365 91 355 25"/><path d="M380 168 Q440 130 650 123"/><path d="M380 168 Q345 130 280 105"/></g>
+  <g fill="#879478"><ellipse cx="268" cy="65" rx="27" ry="9" transform="rotate(35 268 65)"/><ellipse cx="477" cy="57" rx="28" ry="9" transform="rotate(-40 477 57)"/><ellipse cx="208" cy="93" rx="28" ry="9" transform="rotate(9 208 93)"/><ellipse cx="553" cy="91" rx="29" ry="9" transform="rotate(-14 553 91)"/><ellipse cx="354" cy="68" rx="23" ry="8" transform="rotate(78 354 68)"/><ellipse cx="310" cy="124" rx="26" ry="9" transform="rotate(30 310 124)"/></g>
+  <g transform="translate(295 32)"><g fill="#f4c3c0"><ellipse cy="-12" rx="9" ry="18"/><ellipse cy="-12" rx="9" ry="18" transform="rotate(45)"/><ellipse cy="-12" rx="9" ry="18" transform="rotate(90)"/><ellipse cy="-12" rx="9" ry="18" transform="rotate(135)"/><ellipse cy="-12" rx="9" ry="18" transform="rotate(180)"/><ellipse cy="-12" rx="9" ry="18" transform="rotate(225)"/><ellipse cy="-12" rx="9" ry="18" transform="rotate(270)"/><ellipse cy="-12" rx="9" ry="18" transform="rotate(315)"/></g><circle r="8" fill="#d5ad68"/></g>
+  <g transform="translate(455 28)"><g fill="#fff9ec"><ellipse cy="-11" rx="7" ry="15"/><ellipse cy="-11" rx="7" ry="15" transform="rotate(45)"/><ellipse cy="-11" rx="7" ry="15" transform="rotate(90)"/><ellipse cy="-11" rx="7" ry="15" transform="rotate(135)"/><ellipse cy="-11" rx="7" ry="15" transform="rotate(180)"/><ellipse cy="-11" rx="7" ry="15" transform="rotate(225)"/><ellipse cy="-11" rx="7" ry="15" transform="rotate(270)"/><ellipse cy="-11" rx="7" ry="15" transform="rotate(315)"/></g><circle r="6" fill="#d5ad68"/></g>
+  <g transform="translate(200 86)"><g fill="#eaa6a7"><ellipse cy="-9" rx="6" ry="13"/><ellipse cy="-9" rx="6" ry="13" transform="rotate(60)"/><ellipse cy="-9" rx="6" ry="13" transform="rotate(120)"/><ellipse cy="-9" rx="6" ry="13" transform="rotate(180)"/><ellipse cy="-9" rx="6" ry="13" transform="rotate(240)"/><ellipse cy="-9" rx="6" ry="13" transform="rotate(300)"/></g><circle r="5" fill="#c99b56"/></g>
+  <g transform="translate(560 81)"><g fill="#f8d8cd"><ellipse cy="-9" rx="6" ry="13"/><ellipse cy="-9" rx="6" ry="13" transform="rotate(60)"/><ellipse cy="-9" rx="6" ry="13" transform="rotate(120)"/><ellipse cy="-9" rx="6" ry="13" transform="rotate(180)"/><ellipse cy="-9" rx="6" ry="13" transform="rotate(240)"/><ellipse cy="-9" rx="6" ry="13" transform="rotate(300)"/></g><circle r="5" fill="#c99b56"/></g>
+  <g transform="translate(355 86)"><g fill="#f4b7b7"><ellipse cy="-8" rx="5" ry="11"/><ellipse cy="-8" rx="5" ry="11" transform="rotate(60)"/><ellipse cy="-8" rx="5" ry="11" transform="rotate(120)"/><ellipse cy="-8" rx="5" ry="11" transform="rotate(180)"/><ellipse cy="-8" rx="5" ry="11" transform="rotate(240)"/><ellipse cy="-8" rx="5" ry="11" transform="rotate(300)"/></g><circle r="4" fill="#d5ad68"/></g>
+  <path d="M335 121 Q380 143 425 121 L411 155 Q380 170 349 155 Z" fill="#dc969b"/><path d="M349 124 Q380 143 411 124" fill="none" stroke="#b8757a" stroke-width="3"/><path d="M366 143 Q338 164 322 176 Q350 171 380 152 Q410 171 438 176 Q422 164 394 143" fill="#e8aaa8" stroke="#d58c90" stroke-width="1.5"/>
+ </svg>
+ </div>
+</section>
+<section class="memory-note" id="about"><div class="flower">❀</div><blockquote>“Same girl, more dreams, more Smiles.”</blockquote><p>Good vibes only · made with love By your SIR MARK ♡</p></section>
+</main>
+<footer id="contact"><span>♡ My Photo Bouquet</span><span>Every picture tells a story.</span></footer>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="lb close" id="close" aria-label="Close">×</button><button class="lb prev" id="prev" aria-label="Previous photo">‹</button><img id="large" src="" alt=""><button class="lb next" id="next" aria-label="Next photo">›</button><div class="counter" id="counter"></div></div>
+<script>
+const cards=[...document.querySelectorAll('.photo')],imgs=cards.map(c=>c.querySelector('img')),box=document.getElementById('lightbox'),large=document.getElementById('large'),counter=document.getElementById('counter');let active=0;
+function show(i){active=(i+imgs.length)%imgs.length;large.src=imgs[active].src;large.alt=imgs[active].alt;counter.textContent=`${String(active+1).padStart(2,'0')} / ${String(imgs.length).padStart(2,'0')}`;box.classList.add('open');document.body.style.overflow='hidden';document.getElementById('close').focus()}
+function close(){box.classList.remove('open');document.body.style.overflow=''}
+cards.forEach((c,i)=>c.addEventListener('click',()=>show(i)));document.getElementById('close').addEventListener('click',close);document.getElementById('prev').addEventListener('click',()=>show(active-1));document.getElementById('next').addEventListener('click',()=>show(active+1));box.addEventListener('click',e=>{if(e.target===box)close()});document.addEventListener('keydown',e=>{if(!box.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(active-1);if(e.key==='ArrowRight')show(active+1)});
+</script>
+</body>
+</html>
